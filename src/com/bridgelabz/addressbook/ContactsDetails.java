@@ -1,24 +1,25 @@
 package com.bridgelabz.addressbook;
 
 public class ContactsDetails {
-	private String firstName, lastName, address, city, state, email;
+
+	private String firstname, lastname, address, city, state, email;
 	private int zip;
-	private long phoneNumber;
+	private long phonenumber;
 
-	public String getFirstName() {
-		return firstName;
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getLastname() {
+		return lastname;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getAddress() {
@@ -61,18 +62,19 @@ public class ContactsDetails {
 		this.zip = zip;
 	}
 
-	public double getPhoneNumber() {
-		return phoneNumber;
+	public long getPhonenumber() {
+		return phonenumber;
 	}
 
-	public void setPhoneNumber(long phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setPhonenumber(long phonenumber) {
+		this.phonenumber = phonenumber;
 	}
 
 	@Override
 	public String toString() {
-		return "Contacts [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
-				+ ", state=" + state + ", email=" + email + ", zip=" + zip + ", phoneNumber=" + phoneNumber + "]";
+		return "ContactsDetails [firstname=" + firstname + ", lastname=" + lastname + ", address=" + address + ", city="
+				+ city + ", state=" + state + ", email=" + email + ", zip=" + zip + ", phonenumber=" + phonenumber
+				+ "]";
 	}
 
 }
