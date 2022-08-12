@@ -1,22 +1,9 @@
 package com.bridgelabz.addressbook;
 
-public class Contacts {
+public class ContactsDetails {
 	private String firstName, lastName, address, city, state, email;
 	private int zip;
-	private double phoneNumber;
-
-	public Contacts(String firstName, String lastName, String address, String city, String state, String email, int zip,
-			double phoneNumber) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.address = address;
-		this.city = city;
-		this.state = state;
-		this.email = email;
-		this.zip = zip;
-		this.phoneNumber = phoneNumber;
-	}
+	private long phoneNumber;
 
 	public String getFirstName() {
 		return firstName;
@@ -78,7 +65,7 @@ public class Contacts {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(double phoneNumber) {
+	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
