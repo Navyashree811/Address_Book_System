@@ -1,5 +1,5 @@
 /*
- * UC 2 : Ability to edit existing contact person using their name.
+ * UC 3 : Ability to edit existing contact person using their name.
  */
 package com.bridgelabz.addressbook;
 
