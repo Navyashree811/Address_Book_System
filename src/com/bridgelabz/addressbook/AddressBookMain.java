@@ -1,5 +1,5 @@
 /*
- * UC 2 : Ability to detele a person using person's name .
+ * UC 4 : Ability to detele a person using person's name .
  */
 package com.bridgelabz.addressbook;
 
