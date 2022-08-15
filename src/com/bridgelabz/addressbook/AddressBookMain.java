@@ -1,5 +1,5 @@
 /*
- * UC 4 : Ability to detele a person using person's name .
+ * UC 5 : Ability to add multiple person to address book.
  */
 package com.bridgelabz.addressbook;
 
@@ -7,52 +7,48 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBookMain {
-
 	ArrayList<ContactsDetails> contactDetails = new ArrayList<>();
-
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		int i = 0;
-		AddressBookMain obj = new AddressBookMain();
+		AddressBookMain addContact = new AddressBookMain();
 
 		while (i == 0) {
 			System.out.println("Do you would like to continue?: ");
-			System.out.println("1.Add details.\n2.Edit details. \n3.Show Address Book. \n4.Delete the details.");
+			System.out.println("1.Add details.\n2.Edit details. \n3.Show Address Book. \n4.Delete the details");
 			int choose = sc.nextInt();
 			switch (choose) {
 			case 1:
-				obj.addContactDetails();
+				addContact.addContactDetails();
 				break;
 			case 2:
-				obj.editContactDetails();
+				addContact.editContactDetails();
 				break;
 			case 3:
-				obj.showAddressBook();
+				addContact.showAddressBook();
 				break;
 			case 4:
-				obj.deleteContactDetails();
+				addContact.deleteContactDetails();
 				break;
 			default:
 				i = 1;
 				System.out.println("Wrong option");
-				obj.addContactDetails();
+				addContact.addContactDetails();
 				break;
 			}
 		}
-
 	}
-
 	// Method to add the new contacts
 
 	public void addContactDetails() {
 
-		ContactsDetails contactsdetails = new ContactsDetails();// Object of Contacts
+		ContactsDetails contactsdetails = new ContactsDetails();// Object of ContactsDetails
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the First Name of person:");
-		contactsdetails.setFirstName(sc.next());
+		contactsdetails.setFirstname(sc.next());
 		System.out.println("Enter the Last Name of person:");
-		contactsdetails.setLastName(sc.next());
+		contactsdetails.setLastname(sc.next());
 		System.out.println("Enter the Address Name of person:");
 		contactsdetails.setAddress(sc.next());
 		System.out.println("Enter the City Name of person:");
@@ -64,22 +60,22 @@ public class AddressBookMain {
 		System.out.println("Enter the Zip code of person:");
 		contactsdetails.setZip(sc.nextInt());
 		System.out.println("Enter the Phone number of person:");
-		contactsdetails.setPhoneNumber(sc.nextInt());
-		// sc.close();
+		contactsdetails.setPhonenumber(sc.nextInt());
+
+		// to add multiple contact in the array list
 		contactDetails.add(contactsdetails);
-		System.out.println("*******************************");
+		System.out.println("******************************************");
 		System.out.println(contactsdetails.toString());
 	}
 
 	// Method to edit the contact details
-
 	public void editContactDetails() {
 
 		System.out.println("Confirm your first name to edit details: ");
 		String name = sc.next();
 
 		for (int i = 0; i < contactDetails.size(); i++) {
-			if (contactDetails.get(i).getFirstName().equals(name)) {
+			if (contactDetails.get(i).getFirstname().equals(name)) {
 				System.out.println("Select form below to change: ");
 				System.out.println(
 						"\n1.First Name\n2.Last Name\n3.Address\n4.city\n5.State\n6.Email\n7.Zip\n8.Phone number");
@@ -88,11 +84,11 @@ public class AddressBookMain {
 				switch (edit) {
 				case 1:
 					System.out.println("Enter first name");
-					contactDetails.get(i).setFirstName(sc.next());
+					contactDetails.get(i).setFirstname(sc.next());
 					break;
 				case 2:
 					System.out.println("Enter Last name");
-					contactDetails.get(i).setLastName(sc.next());
+					contactDetails.get(i).setLastname(sc.next());
 					break;
 				case 3:
 					System.out.println("Enter address");
@@ -116,7 +112,7 @@ public class AddressBookMain {
 					break;
 				case 8:
 					System.out.println("Enter phone number");
-					contactDetails.get(i).setPhoneNumber(sc.nextInt());
+					contactDetails.get(i).setPhonenumber(sc.nextInt());
 					break;
 				}
 
@@ -127,7 +123,8 @@ public class AddressBookMain {
 		}
 
 	}
-	//show address book methods
+
+	// show address book methods
 	public void showAddressBook() {
 		for (ContactsDetails c : contactDetails) {
 			System.out.println(c);
@@ -135,19 +132,18 @@ public class AddressBookMain {
 	}
 
 	// Purpose : Used deleteDetails method to delete the details of the person
-
 	public void deleteContactDetails() {
 
-		System.out.println("Confirm your first name to delete all the data related to that name : ");
+		System.out.println("Confirm your first name to edit details: ");
 		String name = sc.next();
 
 		for (int i = 0; i < contactDetails.size(); i++) {
-			if (contactDetails.get(i).getFirstName().equals(name)) {
+			if (contactDetails.get(i).getFirstname().equals(name)) {
 				System.out.println("Select form below to change: ");
 				contactDetails.remove(i);
-				break;
 			}
 		}
 		System.out.println(contactDetails);
 	}
+
 }
