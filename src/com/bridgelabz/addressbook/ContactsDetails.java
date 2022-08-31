@@ -2,32 +2,35 @@ package com.bridgelabz.addressbook;
 
 public class ContactsDetails {
 
-	private String firstname, lastname, address, city, state, email;
-	private int zip;
-	private long phonenumber;
+	private String firstName, lastName, city, state, email;
+	private long zip, phoneNumber;
 
-	public String getFirstname() {
-		return firstname;
+	ContactsDetails(String firstName, String lastName, String email, String city, String state, long phoneNumber,
+			long zip) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public String getfirstName() {
+		return firstName;
 	}
 
-	public String getLastname() {
-		return lastname;
+	public void setfirstname(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public String getlastname() {
+		return lastName;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
+	public void setlastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getCity() {
@@ -54,7 +57,7 @@ public class ContactsDetails {
 		this.email = email;
 	}
 
-	public int getZip() {
+	public long getZip() {
 		return zip;
 	}
 
@@ -62,19 +65,20 @@ public class ContactsDetails {
 		this.zip = zip;
 	}
 
-	public long getPhonenumber() {
-		return phonenumber;
+	public long getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setPhonenumber(long phonenumber) {
-		this.phonenumber = phonenumber;
+	public void setPhonenumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	@Override
 	public String toString() {
-		return "ContactsDetails [firstname=" + firstname + ", lastname=" + lastname + ", address=" + address + ", city="
-				+ city + ", state=" + state + ", email=" + email + ", zip=" + zip + ", phonenumber=" + phonenumber
-				+ "]";
+		return "Contact details:" + "\n" + "FirstName=" + firstName + "\n" + "LastName=" + lastName + "\n" + "City="
+				+ city + "\n" + "State=" + state + "\n" + "Zip=" + zip + "\n" + "PhoneNumber=" + phoneNumber + "\n"
+				+ "Email=" + email;
+
 	}
 
 }
