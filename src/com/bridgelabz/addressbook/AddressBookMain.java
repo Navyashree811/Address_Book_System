@@ -1,12 +1,12 @@
 /*
- * UC 8 : Ability to search person in a city or state across the multiple address book.
+ * UC 9 : Ability to view Persons by City or State .
  */
 package com.bridgelabz.addressbook;
 
 import java.util.Scanner;
 
 public class AddressBookMain {
-	// Main method
+
 	public static void main(String[] args) {
 
 		entryOptions();
@@ -19,7 +19,7 @@ public class AddressBookMain {
 		int flag = 1;
 		while (flag == 1) {
 			System.out.println(" Welcome to address book program ");
-			System.out.println(" Select a choice : 1. Add 2.Edit 3.Delete 4.Search 5.Exit");
+			System.out.println(" Select a choice : 1. Add 2.Edit 3.Delete 4.Search 5.View person 6.Exit");
 			int choice = sc.nextInt();
 			switch (choice) {
 			case 1:
@@ -43,6 +43,13 @@ public class AddressBookMain {
 				addressBook.searchByCity();
 				break;
 			case 5:
+				if (addressBook.contactList.isEmpty()) {
+					System.out.println(" Address book is empty ");
+					break;
+				}
+				addressBook.viewPersonByCity();
+				break;
+			case 6:
 				flag = 0;
 				break;
 			default:
@@ -52,4 +59,5 @@ public class AddressBookMain {
 		}
 		System.out.println(addressBook.contactList);
 	}
+
 }

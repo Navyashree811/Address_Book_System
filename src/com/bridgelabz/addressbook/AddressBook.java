@@ -75,4 +75,15 @@ public class AddressBook {
 		}
 
 	}
+
+	// View a person by his city
+	public void viewPersonByCity() {
+		Scanner cityViewInput = new Scanner(System.in);
+		System.out.println(" Enter the city name you want to get the person details");
+		String city = cityViewInput.nextLine();
+		for (ContactsDetails cityList : contactList) {
+			if (cityList.getCity().equals(city))
+				System.out.println(cityList);
+		}
+	}
 }
