@@ -1,9 +1,12 @@
 package com.bridgelabz.addressbook;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class FileHandling {
@@ -50,4 +53,30 @@ public class FileHandling {
 		}
 	}
 
+	public void writeContactToCsv(Map<String, AddressBook> addressBookSystem) throws IOException {
+
+		// Instantiating the CSVWriter class
+		CSVWriter writer = new CSVWriter(new FileWriter("AddrBookFile.csv"));
+		String line[] = { "AddressBook Name", "First Name", "Last Name", "Address", "City", "State", "Pone Number",
+				"E-mail", "Zip" };
+		List contactList = new ArrayList();
+		contactList.add(line);
+		for (String keyName : addressBookSystem.keySet()) {
+			AddressBook addrBookObj = addressBookSystem.get(keyName);
+
+			addrBookObj.getContacts().forEach((contact) -> {
+
+				String line1[] = { keyName, contact.getFirstName().toString(), contact.getLastName().toString(),
+						contact.getAddress().toString(), contact.getCity().toString(), contact.getState().toString(),
+						String.valueOf(contact.getPhoneNumber()), contact.getEmail().toString(),
+						String.valueOf(contact.getZip()) };
+				contactList.add(line1);
+
+			});
+		}
+		// Writing data to the csv file
+		writer.writeAll(contactList);
+		writer.flush();
+		System.out.println("Details written into CSV");
+	}
 }
